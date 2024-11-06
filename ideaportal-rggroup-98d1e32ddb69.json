@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ideaportal-rggroup",
+  "private_key_id": "98d1e32ddb690437792fc1cadc17dc74099008f1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7k4Qef53kAyS+\nIuRmU/8PpnltmPapnQsMvenfBlOMgQ2Ii3cRD2goNxjifzgKV7XeWDBAyZDzUiS7\nh3eIjPuV4Sl9J+JYztWIDPF3qz1XG31MziCCNLL0iH4Gc6RXk4Trk9zG2Dhhn0w+\nxLhM791L2n3+B5Z+QdbnLO+b49LlY0cAlWtbzV9drfuR5Oo7nqz3bSUGCvsJABF/\noU3rg4+MX9JO8JNdtA+Ox1a5IsZcaazcfmt3xrAqngkCYzAD0PDrXS4hMjTyP+Id\nicYHSOc/BDzBni4rt+XRi61ftF9VBUgnZZiNhzbQm2BpyWTFapVaebZWRInDyF4l\ng2Vq3ap9AgMBAAECggEAGLN1GUgQbHuOfdxd6+zBQJgZUvmq98yGrTugHd65J15C\nQDovaId5HZyd0gvTPydsO3atCgcRJ72oOSq+brS0F7liK4lSSQQZwfQEY1AhQISN\n9EyLouHaNBH6WJKncGHshdI/p07HY/GkinqA057dqzS/VTG+G2vDp0c3WXW/qrW1\nIox2fRakIoSPPEXedkdgpjUhgeqevobvbF9B/O3n96Mo9Frg4x+wrJOOQ5DOCv9N\n0DXP/VeH0N8nwRCNxVjnJs+VljYjprkpnFu6sP5H96gUb7ELag3n2M25oduUUc7O\nqCUMeyLeZgHNWK1fpkuy4Bh3OhT81NPIlEgKb6xpaQKBgQD6nKvmzqWSxMnm7T/d\nXB4Gdp+rWhZJPCIHBP0IyiV1hd0wJ8ZUA/BIMi6pBQE8rc67rKCtu57rOsivi9pk\nkIY4K8WtcZvSXqowm1ZZdWNh/Dcjis/A0URJNZ1bBrTL0+iwmQ7CpkJZUdbwtuPv\nreHeVu/D4SO7nMEt10Tog2MkCQKBgQC/m+finI/E6ObB9G2O+JZjX311yNBy6P10\npEDutXEHoCdqqQj5HaKmrCdH/h+i22iSiBaCqetbDqtGqjh4z9fQc0bHD2wW7MHu\n9IFGAFNhB4DTEVARDbu7rMy5AlqCtgExF/oxpz7jFyIhr3qBOf4DN47NYniabOz/\nuvph47z31QKBgQCUB60GZXOpsPGtpN//aeUWXkVMGqdlVM6opMqtwXHE7HBNfIEK\nqVTp4DJthdZIOEYP1xUF6fgh7BQUlSBIHJIbZcea/qtS5LXUhjzIFK3CeA89wEWd\nGD8kmzW6ScjLSP1+KrpsQXaZedzjTLRwo53yDhoL8tV/gUUeRbSfPtR1uQKBgEZP\nvrLggr1ePbd0q3Nocz85/j7nlt5j8wYHdDBkcnq64Vv5dWp83n/M8okvjopjeycy\nOxhtpAkBBAblVd23X1mFw7YuSZrL/IpkPL/kRLR5XWOWmcv4PyiqS2GkpHQMt7k9\nNDleRuxsQ8EatJiRIE4r6AIkHV+Fkx5wjYq4WFKVAoGAVUqRvV1kgOV75JgtnZ2B\nEeDQ8emZLIDdLdCsdHdnibXdE67gze3/yRjWoekSMHzvB5PB8Z3D2VP996SrDVvw\n3Q12PEDGgQbPImc6Za3CzjKlB3/nC2iK2YYJaouK9EylyhFCHnqoG+nxkV2d+W9F\n2C9w2eViYiu4+QvmmcyKNhs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ideaportalwebsite@ideaportal-rggroup.iam.gserviceaccount.com",
+  "client_id": "117868195134581049258",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ideaportalwebsite%40ideaportal-rggroup.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
