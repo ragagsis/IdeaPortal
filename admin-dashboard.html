@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Idea Portal</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -19,9 +18,9 @@
 
     <div class="sidebar">
         <ul>
-            <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Overview</a></li>
-            <li><a href="#" id="manageUsersBtn"><i class="fas fa-users"></i> Manage Users</a></li>
-            <li><a href="#" id="viewIdeasBtn"><i class="fas fa-lightbulb"></i> View Ideas</a></li>
+            <li><a href="#" class="active">Overview</a></li>
+            <li><a href="#" id="manageUsersBtn">Manage Users</a></li>
+            <li><a href="#" id="viewIdeasBtn">View Ideas</a></li>
         </ul>
     </div>
 
@@ -34,22 +33,112 @@
 
         <div id="manageUsers" class="section hidden">
             <h2>Manage Users</h2>
-            <!-- User management functionality will be added here -->
-            <button onclick="addUser()">Add User</button>
+            <button onclick="addUser()">Add User</button><br/><br/>
             <div id="userList"></div>
         </div>
 
         <div id="viewIdeas" class="section hidden">
-            <h2>View Submitted Ideas</h2>
-            <!-- Ideas list will be displayed here -->
-            <div id="ideasList"></div>
+            <h2>View Submitted Ideas</h2><br/>
+            <div id="ideasList"></div><br/>
         </div>
+
     </main>
 
     <footer>
         <p>&copy; 2024 Idea Portal</p>
     </footer>
 
+    <!-- Include script file -->
     <script src="script.js"></script>
+
 </body>
-</html>
+
+<script>
+// Admin Dashboard Functionality
+
+let users = [];
+let ideas = [];
+
+async function fetchUsers() {
+    const response = await fetch('YOUR_GOOGLE_SHEET_API_ENDPOINT'); // Replace with your endpoint
+    const data = await response.json();
+    users = data.values; // Assuming user data is in the first sheet
+}
+
+async function fetchIdeas() {
+    const response = await fetch('YOUR_GOOGLE_SHEET_API_ENDPOINT'); // Replace with your endpoint
+    const data = await response.json();
+    ideas = data.values; // Assuming ideas are in the second sheet
+}
+
+function displayUsers() {
+    const userList = document.getElementById('userList');
+    userList.innerHTML = '';
+    users.forEach((user, index) => {
+        userList.innerHTML += `<div>User ${index + 1}: ${user[0]} 
+            (<button onclick='removeUser(${index})'>Remove</button>) 
+            (<button onclick='alert("User details for ${user[0]}")'>Details</button>) 
+            </div>`;
+    });
+}
+
+function displayIdeas() {
+    const ideasList = document.getElementById('ideasList');
+    ideasList.innerHTML = '';
+    ideas.forEach((idea) => {
+        ideasList.innerHTML += `
+            ${idea[0]}: ${idea[1]} (Status: ${idea[2]}) 
+            ${idea[2] === "pending" ? 
+                `<button onclick='approveIdea(${idea.id})'>Approve</button> 
+                (<button onclick='denyIdea(${idea.id})'>Deny</button>)` : 
+                `<span>Processed</span>`
+            }<br/>`;
+    });
+}
+
+function addUser() {
+    const username = prompt("Enter username:");
+    const password = prompt("Enter password:");
+    
+    if (username && password) {
+        // Logic to add user to Google Sheets goes here.
+        alert(`${username} has been added.`);
+        fetchUsers(); // Refresh the user list after adding.
+        updateOverview();
+    }
+}
+
+function removeUser(index) {
+    users.splice(index, 1);
+    displayUsers();
+}
+
+function approveIdea(id) {
+   const idea = ideas.find(idea => idea.id === id);
+   if (idea) {
+       idea[2] = "approved"; // Update status to approved
+       alert(`Idea "${idea[1]}" has been approved.`);
+       displayIdeas();
+   }
+}
+
+function denyIdea(id) {
+   const idea = ideas.find(idea => idea.id === id);
+   if (idea) {
+       idea[2] = "denied"; // Update status to denied
+       alert(`Idea "${idea[1]}" has been denied.`);
+       displayIdeas();
+   }
+}
+
+// Initialize the dashboard
+fetchUsers();
+fetchIdeas();
+displayUsers();
+displayIdeas();
+
+document.getElementById('logoutBtn').addEventListener('click', function() {
+	alert("Logged out");
+	window.location.href = "index.html"; // Redirect to home page on logout
+});
+</script>
